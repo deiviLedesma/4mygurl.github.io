@@ -1,0 +1,194 @@
+:root {
+    --rosa: #ff55a3;
+    --morado-claro: #d19fe8;
+    --rosa-bebe: #f4c2c2;
+    --amarillo-bebe: #fae7b5;
+    --blanco-hueso: #fff8dc;
+    --morado-rosa: #ffe1ff;
+
+
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to top, var(--morado-claro) 0%, var(--morado-rosa) 100%);
+}
+
+.titulo {
+
+    margin-top: 1rem;
+    text-align: center;
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    color: var(--rosa);
+
+}
+
+.subtitulo {
+    margin-bottom: 2rem;
+    margin-top: 26rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    /* margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;*/
+
+
+    /* margin: 0 auto 0 auto; es lo mismo que arriba*/
+}
+
+
+
+.sombra {
+    -webkit-box-shadow: 12px 1px 41px -5px rgba(107, 43, 107, 1);
+    -moz-box-shadow: 12px 1px 41px -5px rgba(107, 43, 107, 1);
+    box-shadow: 12px 1px 41px -5px rgba(107, 43, 107, 1);
+    background-color: aliceblue;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+
+.nav-bg {
+    background-color: var(--morado-claro);
+
+}
+
+.navegacion-principal {
+    top: 100rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    /*esto hace que se vea en forma de columna en el cel*/
+
+}
+
+.navegacion-principal a {
+    color: darkslateblue;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 722;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    color: white;
+}
+
+.svg-contenedor {
+    text-align: center;
+}
+
+
+
+/*ctrl+shift+p
+abre un buscador y pones user snippets y usas el de css y esto
+te crea atajos de codigo, tu los haces, ahorita tengo el de "mq"*/
+
+.icon-tabler-plant-2 {
+    text-align: center;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: rotate(45deg);
+    animation: heartbeat 1s infinite;
+    top: 200px;
+    left: 47.5%;
+    background-color: red;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+.spotify {
+    max-width: 100%;
+    height: auto;
+}
+
+.texto{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(315deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(315deg);
+    }
+}
+
+/*Este sirve para modificar la pantalla en base al tamaño de la pantalla,
+asi como si fuera de celular y tablet*/
+@media(min-width: 480px) {
+
+    /*480px telefono, 768 tablet, 1140px laptop o pc 0 1400px*/
+    .navegacion-principal {
+        flex-direction: row;
+        /*aqui establece que si es mayor a 768 se ve normal en pc*/
+        justify-content: space-between;
+    }
+
+
+
+
+
+}
+
+@media(max-width: 480px) {
+    .heart {
+        top: 350px;
+        left: 42%;
+    }
+}
